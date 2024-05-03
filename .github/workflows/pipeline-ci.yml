@@ -19,6 +19,9 @@ jobs:
       - name: pruebas unitarias
         run: |
           mvn test
+      - name: ejecución jacoco
+        run: |
+          mvn sonar:sonar -Pcoverage
       - name: configuracion de java para sonar
         uses: actions/setup-java@main
         with:
