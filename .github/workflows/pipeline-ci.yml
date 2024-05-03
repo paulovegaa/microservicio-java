@@ -16,6 +16,9 @@ jobs:
         run: |
           mvn package
           #echo 'package'
+      - name: pruebas unitarias
+        run: |
+          mvn test
       - name: configuracion de java para sonar
         uses: actions/setup-java@main
         with:
