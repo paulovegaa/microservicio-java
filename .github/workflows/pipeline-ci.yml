@@ -15,10 +15,20 @@ jobs:
       - name: Compilacion
         run: |
           mvn package
-          #echo 'package'
-      - name: pruebas unitarias
+      - name: ejecución de pruebas
         run: |
-          mvn test
+          mvn clean verify
+      - name: ejecución de pruebas
+        run: |
+          mvn pdf:pdf
+      - name: crear reporte de jacoco
+        uses: actions/upload-artifact@v2
+        with:
+          name: jacoco-report
+          path: target/
+      #- name: pruebas unitarias
+        #run: |
+          #mvn test
       - name: configuracion de java para sonar
         uses: actions/setup-java@main
         with:
