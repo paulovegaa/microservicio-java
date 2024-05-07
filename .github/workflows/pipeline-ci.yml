@@ -44,12 +44,12 @@ jobs:
       - name: Docker push 
         run: |
           docker push paulovegaa/microservicio-java
-  #deploy:
-   # needs: build
-   # runs-on: self-hosted
-   # steps:
-   #   - name: Clonacion de repositorio para deploy
-   #     uses: actions/checkout@v3
-   #   - name: Despliegue
-   #     run: |
-   #       kubectl apply -f deploy.yaml
+  deploy:
+    needs: build
+    runs-on: self-hosted
+    steps:
+      - name: Clonacion de repositorio para deploy
+        uses: actions/checkout@v3
+      - name: Despliegue
+        run: |
+          kubectl apply -f deploy.yaml
