@@ -26,9 +26,6 @@ jobs:
         with:
           name: jacoco-report
           path: target/
-      #- name: pruebas unitarias
-        #run: |
-          #mvn test
       - name: configuracion de java para sonar
         uses: actions/setup-java@main
         with:
