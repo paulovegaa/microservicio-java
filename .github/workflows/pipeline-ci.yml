@@ -14,7 +14,7 @@ jobs:
           distribution: 'temurin'
       - name: Compilacion
         run: |
-          mvn package
+          mvn clean package
       - name: ejecución de pruebas
         run: |
           mvn clean verify
